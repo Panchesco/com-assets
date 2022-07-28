@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\AssetController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,17 +29,21 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/user', [AuthController::class, 'getUser']);
 
-// Roles
-Route::get('/role', function() {
-    $data = [
-        'message' => "This is the Roles landing page."
-    ];
-    return response()->json($data, 200);
-});
+
 
 // Roles
 Route::post('/role/create',[RoleController::class, 'createRole']);
 Route::post('/role/update',[RoleController::class, 'createRole']);
+
+// Assets
+Route::get('/asset',[AssetController::class, 'index']);
+Route::get('/asset/create',[AssetController::class, 'create']);
+Route::get('/asset/{id}',[AssetController::class, 'show']);
+Route::get('/asset/edit/{id}',[AssetController::class, 'edit']);
+
+Route::post('/asset/store',[AssetController::class, 'store']);
+Route::post('/asset/delete',[AssetController::class, 'destroy']);
+
 
 
 Route::middleware('jwt.verify')->group(function() {
