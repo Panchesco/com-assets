@@ -16,8 +16,8 @@
 
 ## Notes
 
-This project is still being developed and the UI is incomplete. 
-Policies are not in place, but the following API endpoints are available via Postman:
+* This project is still being developed and the UI is incomplete. 
+* Policies are not in place, but the following API endpoints are available via Postman:
 
 | Request | Endpoint |	Query Params |
 | --- | --- | --- |
