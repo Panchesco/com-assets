@@ -16,11 +16,11 @@
 
 ## Notes
 
-* This project is still being developed and the UI is incomplete. 
+* This project is still under development and the UI is incomplete. 
 * Policies are not in place, but the following API endpoints are available via Postman:
 
 | Request | Endpoint |	Query Params | Description |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | POST | /api/role/update | role, slug, description | Creates a user role. |
 
 
