@@ -17,11 +17,15 @@
 ## Notes
 
 * This project is still under development and the UI is incomplete. 
-* Policies are not in place, but the following API endpoints are available via Postman:
+* Policies are not in place, but the following API endpoints returning JSON objects are available via Postman:
 
 | Request | Endpoint |	Query Params | Description |
 | --- | --- | --- | --- |
 | POST | /api/role/update | role, slug, description | Creates a user role. |
+| POST | /api/register | name, email, password, c_password, role_id | Registers a new user. |
+| POST | /api/login | email | Logs a user in |
+| GET | /api/user | | Returns JSON object of current users |
+
 
 
 
