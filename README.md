@@ -12,7 +12,8 @@
 4. Update the .env file with the database information.
 5. Run composer install.
 6. Generate an encryption key: php artisan key:generate.
-7. Run migrations: ```php artisan migrate```
+7. Run migrations: ```php artisan migrate```.
+8. Run the dev server: ```php artisan serve```.
 
 ## Notes
 
