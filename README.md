@@ -20,6 +20,8 @@
 * This project is under development and the UI is incomplete. 
 * Policies, search, and notifications are not in place, but the following API endpoints returning JSON objects are available via Postman:
 
+## API Endpoints
+
 
 ### Roles
 | Request | Endpoint |	Query Params | Description | Response |
