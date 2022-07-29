@@ -16,22 +16,22 @@
 
 ## Notes
 
-* This project is still under development and the UI is incomplete. 
+* This project is under development and the UI is incomplete. 
 * Policies are not in place, but the following API endpoints returning JSON objects are available via Postman:
 
 
 ### Roles
-| Request | Endpoint |	Query Params | Description |
-| --- | --- | --- | --- |
-| POST | /api/role/update | role, slug, description | Creates a user role. |
+| Request | Endpoint |	Query Params | Description | Response |
+| --- | --- | --- | --- | --- |
+| POST | /api/role/update | role, slug, description | Creates a user role. | JSON string |
 
 
 ### Users/Authentication
-| Request | Endpoint |	Query Params | Description |
-| --- | --- | --- | --- |
-| POST | /api/register | name, email, password, c_password, role_id | Registers a new user. |
-| POST | /api/login | email | Logs a user in |
-| GET | /api/user | | Returns JSON object of current users |
+| Request | Endpoint |	Query Params | Description | Response |
+| --- | --- | --- | --- | --- |
+| POST | /api/register | name, email, password, c_password, role_id | Registers a new user. | JSON string |
+| POST | /api/login | email | Logs a user in | JSON string |
+| GET | /api/user | | List of current users | JSON string |
 
 ### Assets
 | Request | Endpoint |	Query Params | Description | Response |
