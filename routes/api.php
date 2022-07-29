@@ -25,14 +25,14 @@ Route::get('/', function() {
     return response()->json($data, 200);
 });
 
+// Roles
+Route::post('/role/create',[RoleController::class, 'create']);
+Route::post('/role/update',[RoleController::class, 'update']);
+
 // Users
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/user', [AuthController::class, 'getUser']);
-
-// Roles
-Route::post('/role/create',[RoleController::class, 'create']);
-Route::post('/role/update',[RoleController::class, 'update']);
 
 // Assets
 Route::get('/asset',[AssetController::class, 'index']);
