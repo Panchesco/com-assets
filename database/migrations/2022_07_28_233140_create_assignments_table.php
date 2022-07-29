@@ -17,9 +17,9 @@ class CreateAssignmentsTable extends Migration
             $table->id();
             $table->integer('asset_id');
             $table->integer('user_id');
-            $table->text('notes');
-            $table->timestamp('checked_out', 0);
-            $table->timestamp('turned_in', 0);
+            $table->text('notes')->nullable();
+            $table->string('checked_out',19)->nullable();
+            $table->string('turned_in',19)->nullable();
             $table->timestamps();
         });
     }

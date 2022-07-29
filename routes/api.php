@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\AssetController;
+use App\Http\Controllers\AssignmentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -42,7 +43,8 @@ Route::post('/asset/update',[AssetController::class, 'store']);
 Route::post('/asset/delete',[AssetController::class, 'destroy']);
 
 // Assigments
-
+Route::get('/assignment',[AssignmentController::class, 'index']);
+Route::post('/assignment/update',[AssignmentController::class, 'store']);
 
 
 
