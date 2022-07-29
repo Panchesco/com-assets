@@ -14,7 +14,10 @@ class AddRoleIdColumnToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-	        $table->integer('role_id')->unsigned()->after('password');
+	        $table->integer('role_id')
+	        	->unsigned()
+	        	->default(4)
+	        	->after('password');
             
         });
     }

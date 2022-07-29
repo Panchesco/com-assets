@@ -1,13 +1,13 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-  	'./storage/framework/views/*.php',
-    './resources/**/*.blade.php',
-    './resources/**/*.js',
-    './resources/**/*.vue',
+  purge: [
+    './resources/views/**/*.blade.php',
+    './resources/css/**/*.css',
   ],
   theme: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  variants: {},
+  plugins: [
+    require('@tailwindcss/ui'),
+  ]
 }
