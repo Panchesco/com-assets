@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRolesTable extends Migration
+class CreateAssignmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('assignments', function (Blueprint $table) {
             $table->id();
-            $table->string('role', 16);
-            $table->string('slug', 32);
-            $table->string('description')->nullable();
+            $table->integer('asset_id');
+            $table->integer('user_id');
+            $table->text('notes');
+            $table->timestamp('checked_out', 0);
+            $table->timestamp('turned_in', 0);
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('assignments');
     }
 }

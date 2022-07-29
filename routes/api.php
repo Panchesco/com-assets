@@ -29,20 +29,20 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/user', [AuthController::class, 'getUser']);
 
-
-
 // Roles
-Route::post('/role/create',[RoleController::class, 'createRole']);
-Route::post('/role/update',[RoleController::class, 'createRole']);
+Route::post('/role/create',[RoleController::class, 'create']);
+Route::post('/role/update',[RoleController::class, 'update']);
 
 // Assets
 Route::get('/asset',[AssetController::class, 'index']);
 Route::get('/asset/create',[AssetController::class, 'create']);
 Route::get('/asset/{id}',[AssetController::class, 'show']);
 Route::get('/asset/edit/{id}',[AssetController::class, 'edit']);
-
-Route::post('/asset/store',[AssetController::class, 'store']);
+Route::post('/asset/update',[AssetController::class, 'store']);
 Route::post('/asset/delete',[AssetController::class, 'destroy']);
+
+// Assigments
+
 
 
 

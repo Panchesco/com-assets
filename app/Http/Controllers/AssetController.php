@@ -3,33 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asset;
+use App\Http\Helpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class AssetController extends Controller
 {
-	
-    public function sendResponse($data, $message, $status = 200) 
-    {
-        $response = [
-            'data' => $data,
-            'message' => $message
-        ];
-
-        return response()->json($response, $status);
-    }
-
-    public function sendError($errorData, $message, $status = 500)
-    {
-        $response = [];
-        $response['message'] = $message;
-        if (!empty($errorData)) {
-            $response['data'] = $errorData;
-        }
-
-        return response()->json($response, $status);
-    }
-    
     
     /**
      * Display a listing of the resource.
@@ -38,7 +17,7 @@ class AssetController extends Controller
      */
     public function index()
     {
-        return $this->sendResponse(Asset::get(),'All Assets');
+        return \App\Http\Helpers\sendResponse(Asset::get(),'All Assets');
     }
 
     /**
@@ -48,7 +27,7 @@ class AssetController extends Controller
      */
     public function create(Request $request)
     {
-		return $this->sendResponse([],'Form for creating an asset goes here.');
+		return \App\Http\Helpers\sendResponse([],'Form for creating an asset goes here.');
     }
 
     /**
@@ -63,11 +42,12 @@ class AssetController extends Controller
            
            $validator = Validator::make($input, [
             'title' => 'required:max:42',
+            'description' => 'required',
             'serial' => 'required',
             ]);
             
             if($validator->fails()){
-            return $this->sendError($validator->errors(), 'Validation Error', 422);
+            return \App\Http\Helpers\sendError($validator->errors(), 'Validation Error', 422);
         }
         
         $msg = (Asset::where('serial',$input['serial']))->first() ? "Asset updated." : "Asset created.";
@@ -76,7 +56,7 @@ class AssetController extends Controller
 
         $success['asset'] = $asset;
 
-        return $this->sendResponse($success, $msg, 201);
+        return \App\Http\Helpers\sendResponse($success, $msg, 201);
     }
 
     /**
@@ -89,7 +69,7 @@ class AssetController extends Controller
     {
         $asset = Asset::find($id);
                 
-        return $this->sendResponse($asset, "", 201);
+        return \App\Http\Helpers\sendResponse($asset, "", 201);
     }
 
     /**
@@ -99,10 +79,8 @@ class AssetController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Asset $id)
-    {
-	    
-	    die('bongo');
-        return $this->sendResponse([],'Form for editing an asset goes here.');
+    {;
+        return \App\Http\Helpers\sendResponse([],'Form for editing an asset goes here.');
     }
 
     /**
@@ -132,14 +110,14 @@ class AssetController extends Controller
             ]);
             
             if($validator->fails()){
-            return $this->sendError($validator->errors(), 'Asset id is missing', 422);
+            return \App\Http\Helpers\sendError($validator->errors(), 'Asset id is missing', 422);
         }
        
        
        $asset = Asset::find($input['id']);
        
        $destroy = Asset::destroy($input['id']);
-       return $this->sendResponse($asset, "This asset has been removed.", 201);
+       return \App\Http\Helpers\sendResponse($asset, "This asset has been removed.", 201);
        
     }
 }
