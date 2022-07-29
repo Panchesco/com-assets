@@ -45,11 +45,11 @@
 | POST | /api/asset/delete | id | Deletes Asset record in the db. | JSON string - success or fail message |
 
 
-### Asset Assignment
+### Assignment of Assets
 | Request | Endpoint |	Query Params | Description | Response |
 | --- | --- | --- | --- | --- |
 | GET | /api/assignment |  | List of assigned Assets | JSON string of current assignments. |
-| POST | /api/assignment/update | user_id, asset_id, notes, checked_out, turned_in | Updates and existing Assignment or creates new Assignment | JSON string with information about Assignment |
+| POST | /api/assignment/update | user_id, asset_id, notes, checked_out, turned_in | Updates an existing Assignment or creates new Assignment | JSON string with information about Assignment |
 
 
 
