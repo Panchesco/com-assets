@@ -18,7 +18,7 @@
 ## Notes
 
 * This project is under development and the UI is incomplete. 
-* Policies are not in place, but the following API endpoints returning JSON objects are available via Postman:
+* Policies, search, and notifications are not in place, but the following API endpoints returning JSON objects are available via Postman:
 
 
 ### Roles
