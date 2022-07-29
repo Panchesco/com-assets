@@ -23,15 +23,15 @@
 ### Roles
 | Request | Endpoint |	Query Params | Description | Response |
 | --- | --- | --- | --- | --- |
-| POST | /api/role/update | role, slug, description | Creates a user role. | JSON string |
+| POST | /api/role/update | role, slug, description | Updates an existing or creates a new user role. | JSON string: Data or role, success/error message |
 
 
 ### Users/Authentication
 | Request | Endpoint |	Query Params | Description | Response |
 | --- | --- | --- | --- | --- |
-| POST | /api/register | name, email, password, c_password, role_id | Registers a new user. | JSON string |
-| POST | /api/login | email | Logs a user in | JSON string |
-| GET | /api/user | | List of current users | JSON string |
+| POST | /api/register | name, email, password, c_password, role_id | Registers a new user. | JSON string: User data, success/error message |
+| POST | /api/login | email | Logs a user in | JSON string: success/error message |
+| GET | /api/user | | List of current users | JSON string: Registered users data |
 
 ### Assets
 | Request | Endpoint |	Query Params | Description | Response |
